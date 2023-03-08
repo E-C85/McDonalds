@@ -15,13 +15,48 @@ public class Menu {
 
 
            menusecimi();
-           String menusecim=menusecimi();
            icecekTercihi();
+           chipstercih();
+
 
 
 
 
     }
+    public static void cipsboyut(){
+
+        System.out.println("Cipsi Hangi Boyda Tercih Edersiniz:\ncips kucuk boy  ->1\n"+"Cips orta boy  ->2\n"+"Cips buyuk boy ->3");
+        int boyutsecim=sc.nextInt();
+        if (boyutsecim==1){
+            System.out.println("Kucuk Boy Cips Hazirlaniyor");
+        } else if (boyutsecim==2) {
+            System.out.println("Orta Boy Cips hazirlaniyor");
+
+        }else if (boyutsecim==3){
+            System.out.println("Buyuk Boy Cips hazirlaniyor");
+        }else {
+            System.out.println("yanlis girdniz,yeniden boyut seciniz");
+            cipsboyut();
+        }
+
+    }
+
+    private static void chipstercih() {
+        System.out.println("\ncips istermisiniz?\n");
+        System.out.println("Evet veya Hayir seciniz\n");
+        String cipssecimi=sc.next();
+        if(cipssecimi.equalsIgnoreCase("Evet")){
+
+            cipsboyut();
+        }else if (cipssecimi.equalsIgnoreCase("Hayir")){
+            System.out.println("Cips durduruldu");
+        }else {
+            System.out.println("yanlis giris yaptiniz");
+            chipstercih();
+        }
+
+    }
+
 
     private static void icecekTercihi() {
         System.out.println("Hangi icecegi tercih ediyorsunuz?");
@@ -95,4 +130,5 @@ public class Menu {
         System.out.println("Double Cheese burger");
 
     }
+
 }
