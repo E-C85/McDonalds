@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+
+
 public class Menu {
     static Scanner sc=new Scanner(System.in);
     public static void main(String[] args) {
@@ -18,15 +20,22 @@ public class Menu {
            icecekTercihi();
            chipstercih();
 
-
-
+           decorations("Bizi tercih ettiginiz icin tesekur eder iyi gunler dileriz..");
 
 
     }
+
+    public static void decorations(String text) {
+        System.out.println("************************  ****  *************************");
+        System.out.println(text);
+        System.out.println("************************  ****  *************************");
+    }
+
     public static void cipsboyut(){
 
-        System.out.println("Cipsi Hangi Boyda Tercih Edersiniz:\ncips kucuk boy  ->1\n"+"Cips orta boy  ->2\n"+"Cips buyuk boy ->3");
-        int boyutsecim=sc.nextInt();
+            decorations("Cipsi Hangi Boyda Tercih Edersiniz:\ncips kucuk boy  ->1\nCips orta boy  ->2\nCips buyuk boy ->3");
+
+            int boyutsecim=sc.nextInt();
         if (boyutsecim==1){
             System.out.println("Kucuk Boy Cips Hazirlaniyor");
         } else if (boyutsecim==2) {
@@ -42,7 +51,7 @@ public class Menu {
     }
 
     private static void chipstercih() {
-        System.out.println("\ncips istermisiniz?\n");
+        decorations("\ncips istermisiniz?\n");
         System.out.println("Evet veya Hayir seciniz\n");
         String cipssecimi=sc.next();
         if(cipssecimi.equalsIgnoreCase("Evet")){
@@ -59,8 +68,9 @@ public class Menu {
 
 
     private static void icecekTercihi() {
-        System.out.println("Hangi icecegi tercih ediyorsunuz?");
-        System.out.println("\n1. Cocacola"+"\n2. Fanta"+"\n3. Sprite"+"\n4. Nescafe"+"\n5. Cay");
+
+        decorations("Hangi icecegi tercih ediyorsunuz?(Lutfen sayi giriniz)\n1.Cocacola \n2.Fanta \n3.Sprite \n4.Nescafe \n5.Cay");
+
         int tercihi=sc.nextInt();
         switch (tercihi) {
             case 1:
@@ -89,8 +99,8 @@ public class Menu {
     }
 
     private static void boyutSecimi() {
-        System.out.println("Lutfen boyut secimi yapiniz  :");
-        System.out.println("\nBuyuk \nOrta  \nKucuk ");
+        decorations("Lutfen boyut secimi yapiniz  :\nBuyuk \nOrta  \nKucuk");
+
         String secimBoyut=sc.next();
         if(secimBoyut.equals("buyuk")){
             System.out.println("Iceceginiz "+ secimBoyut +" boy olarak hazirlaniyor");
@@ -107,7 +117,10 @@ public class Menu {
 
     public  static String  menusecimi() {
         while (true){
-            System.out.println("lutfen menu secimini giriniz");String secim=sc.nextLine();
+
+            decorations("lutfen menu secimini giriniz");
+
+            String secim=sc.nextLine();
             if (secim.equalsIgnoreCase("Hamburger") || secim.equalsIgnoreCase("Cheeseburger")||
                     secim.equalsIgnoreCase("Double Cheese Burger")){
                 return secim;
@@ -123,11 +136,9 @@ public class Menu {
     }
 
     private static void menuekranciktisi() {
-        System.out.println("***********************8 Mc Donald's Hosgeldiniz**********************");
-        System.out.println("Lutfen Menu Seciniz");
-        System.out.println("Hamburger");
-        System.out.println("Cheeseburger");
-        System.out.println("Double Cheese burger");
+        decorations("***************** Mc Donald's Hosgeldiniz****************" +
+                "\nLutfen Menu Seciniz\nHamburger\nCheeseburger\nDouble Cheese burger\n");
+
 
     }
 
